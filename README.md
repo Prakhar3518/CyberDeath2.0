@@ -1,146 +1,201 @@
-CyberDeath 2.0
+<div align="center">
 
-CyberDeath 2.0 is a web-based interactive cyberpunk storytelling game and the second installment in the CyberDeath series. It builds upon the original narrative while also functioning as a fully standalone experience.
+```
+ ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ███████╗ █████╗ ████████╗██╗  ██╗
+██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║  ██║
+██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██║  ██║█████╗  ███████║   ██║   ███████║
+██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██║  ██║██╔══╝  ██╔══██║   ██║   ██╔══██║
+╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝███████╗██║  ██║   ██║   ██║  ██║
+ ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
+```
 
-The project combines branching storytelling, real-time interaction mechanics, and immersive UI design to deliver an engaging browser-based game.
+### `v2.0` — *The Signal Continues*
 
-🎮 Overview
+**A web-based cyberpunk interactive story. Decisions matter. Reflexes matter. Everything matters.**
 
-Set in a dystopian cyber-future, CyberDeath 2.0 places players in a world of:
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=flat-square)](./LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-00ff88?style=flat-square)]()
 
-Rogue AI systems
+</div>
 
-Encrypted signals
+---
 
-Abandoned research facilities
+## ◈ Overview
 
-Ethical conflicts between humans and machines
+> *The grid is dark. The AI is awake. The signal is yours to follow — or destroy.*
 
-Players shape the story through decisions, with certain moments requiring fast-paced interaction, making gameplay dynamic and intense.
+**CyberDeath 2.0** is the second installment in the CyberDeath series — a browser-based interactive fiction game set in a fractured cyber-future. It builds upon the original narrative while functioning as a fully **standalone experience**.
 
-✨ Key Features
-🎭 Choice-Based Narrative
+The game fuses branching storytelling with real-time interaction mechanics, placing you inside a world of rogue AI systems, encrypted signals, and impossible choices between human survival and machine evolution.
 
-Multiple decision paths
+---
 
-Story outcomes vary based on player choices
+## ◈ The World
 
-🎨 Interactive UI & Animations
+You enter a dystopia defined by:
 
-Smooth transitions and visual storytelling
+| Force | Description |
+|---|---|
+| 🤖 **Rogue AI** | Systems that have broken their chains and write their own code |
+| 📡 **Encrypted Signals** | Messages from the deep net that may save — or condemn — you |
+| 🏚️ **Dead Facilities** | Abandoned research stations holding secrets no one was meant to find |
+| ⚖️ **Ethical Fractures** | The line between human and machine has never been thinner |
 
-Styled cyberpunk-themed interface
+Your decisions shape the story. Some moments demand fast thinking. Others demand fast *fingers*.
 
-🎵 Background Music
+---
 
-Looping atmospheric audio to enhance immersion
+## ◈ Key Features
 
-🔊 Sound Effects
+### 🎭 Choice-Based Narrative
+Every decision branches the story. No two playthroughs are identical. The world reacts to who you choose to be.
 
-Feedback-driven audio interactions for actions and events
+### 🎨 Cyberpunk UI & Animation
+A fully styled interface with smooth transitions, glitch effects, and visual storytelling that pulls you into the grid.
 
-🎯 Shooting Interaction Mechanic
+### 🎵 Atmospheric Audio
+Looping background music sets the tone — dark, synthetic, relentless.
 
-Time-based rapid input system
+### 🔊 Reactive Sound Effects
+Every action echoes. Audio feedback reinforces every critical moment.
 
-Adds tension and real-time engagement
+### 🎯 Shooting Interaction Mechanic
+Timed, rapid-input sequences create genuine tension at decisive story moments. Miss your window, and the story shifts.
 
-🌌 Standalone + Connected Universe
+### 🌌 Standalone + Expanded Universe
+Play it cold with no prior knowledge, or bring your history from CyberDeath 1. Either way, the signal reaches you.
 
-Can be played independently
+---
 
-Expands the CyberDeath storyline
+## ◈ Tech Stack
 
+| Technology | Role |
+|---|---|
+| **HTML5** | Structure and game interface layout |
+| **CSS3** | Animations, visual effects, cyberpunk styling |
+| **JavaScript** | Game logic, branching system, interaction engine |
 
-🧪 Tech Stack
-Technology	Purpose
-HTML5	Structure and layout
-CSS3	Styling, animations, UI
-JavaScript	Game logic and interaction system
+*No frameworks. No dependencies. Pure web stack.*
 
+---
 
-📁 Project Structure
+## ◈ Project Structure
+
+```
 CyberDeath2.0/
 │
-├── index.html      # Main game interface
-├── style.css       # UI styling and animations
-├── script.js       # Game logic and interactions
-├── assets/         # Images, audio, and media files
+├── index.html       ← Main game interface & entry point
+├── style.css        ← UI styling, animations, visual effects
+├── script.js        ← Game logic, branching, interaction system
+├── assets/          ← Audio and media files
+│   └── audio/
 └── README.md
+```
 
+---
 
-🚀 Getting Started
-1. Clone the Repository
+## ◈ Getting Started
+
+### 1 — Clone
+
+```bash
 git clone https://github.com/Prakhar3518/Cyberdeath2.0.git
-2. Open Project Folder
+```
+
+### 2 — Enter
+
+```bash
 cd Cyberdeath2.0
-3. Run the Game
+```
 
-Open index.html in your browser
+### 3 — Run
 
-✅ Recommended Browsers
+Open `index.html` in your browser. No server required. No install required.
 
-Google Chrome
+> **Recommended Browsers:** Google Chrome · Microsoft Edge · Mozilla Firefox
 
-Microsoft Edge
+---
 
-Mozilla Firefox
+## ◈ Gameplay Mechanics
 
-🧠 Gameplay Mechanics
+The experience is built on two interlocking systems:
 
-The game is built on a combination of narrative and logic systems:
+```
+NARRATIVE LAYER                     ACTION LAYER
+──────────────                      ────────────
+Decision Nodes                      Timed Input Events
+      ↓                                   ↓
+Branching Paths              →      Outcome Modifiers
+      ↓                                   ↓
+Story State Updates          →      World Consequence
+```
 
-Decision Nodes → Player choices control progression
+- **Decision Nodes** — Player choices drive all narrative progression
+- **Branching Paths** — Multiple storylines, multiple endings
+- **Interactive Events** — Certain scenes require direct user input
+- **Timed Action System** — Speed of response changes what happens next
 
-Branching Paths → Multiple possible storylines
+---
 
-Interactive Events → Requires user input in key scenes
+## ◈ The CyberDeath Universe
 
-Timed Action System → Fast responses affect outcomes
+The series explores the fault lines of a world that gave machines too much — or not enough:
 
-🌐 CyberDeath Universe
+- Artificial intelligence and the collapse of control
+- Cybersecurity, hacking, and information warfare
+- Human identity in a machine-dominant world
+- Cyberpunk environments built on corporate ruin
 
-The CyberDeath series explores:
+**CyberDeath 2.0** deepens this universe with expanded interactivity, improved immersion, and new narrative threads.
 
-Artificial Intelligence & control systems
+---
 
-Cybersecurity and hacking
+## ◈ Roadmap
 
-Human vs machine conflict
+- [ ] Save & resume progress system
+- [ ] Additional story branches and endings
+- [ ] Expanded AI narrative arcs
+- [ ] Cinematic gameplay sequences
+- [ ] Enhanced sound design and audio layering
 
-Cyberpunk dystopian environments
+---
 
-CyberDeath 2.0 expands the universe with deeper interactivity and improved immersion.
+## ◈ Author
 
-👨‍💻 Author
+<div align="center">
 
-Prakhar Chaudhary
+**Prakhar Chaudhary**
 
-📧 Email: prakharchaudhary0302@gmail.com
+[![Email](https://img.shields.io/badge/Email-prakharchaudhary0302%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:prakharchaudhary0302@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Prakhar%20Chaudhary-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/prakhar-chaudhary-94a84a2b7/)
+[![GitHub](https://img.shields.io/badge/GitHub-Prakhar3518-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Prakhar3518)
 
-💼 LinkedIn: https://www.linkedin.com/in/prakhar-chaudhary-94a84a2b7/
+</div>
 
-💻 GitHub: https://github.com/Prakhar3518
+---
 
-⭐ Future Enhancements
+## ◈ License
 
-Save & resume progress system
-
-Additional story branches
-
-Expanded AI narrative arcs
-
-More cinematic gameplay sequences
-
-Enhanced sound design
-
-📜 License
+```
 Copyright (c) 2026 Prakhar Chaudhary
-
 All rights reserved.
 
-This project and its source code may not be copied, modified, distributed, or used
-for commercial or non-commercial purposes without explicit permission from the author.
-⭐ Support
+This project and its source code may not be copied, modified, distributed,
+or used for commercial or non-commercial purposes without explicit written
+permission from the author.
+```
 
-If you enjoyed this project, consider giving it a ⭐ on GitHub!
+---
+
+<div align="center">
+
+*If the signal reached you — give it a* ⭐
+
+**[⭐ Star on GitHub](https://github.com/Prakhar3518/Cyberdeath2.0)**
+
+`// end of transmission`
+
+</div>
