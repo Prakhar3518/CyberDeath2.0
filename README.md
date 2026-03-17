@@ -90,8 +90,6 @@ CyberDeath2.0/
 ├── index.html       ← Main game interface & entry point
 ├── style.css        ← UI styling, animations, visual effects
 ├── script.js        ← Game logic, branching, interaction system
-├── assets/          ← Audio and media files
-│   └── audio/
 └── README.md
 ```
 
