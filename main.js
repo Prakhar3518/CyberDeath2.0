@@ -426,7 +426,7 @@
   /* ─────────────────────────────────────────
      CONSTANTS & STATE
   ───────────────────────────────────────── */
-  const TOTAL = 21;
+  const TOTAL = 22;
   let cur = 0;
   let cdSec = 43200; // 12 hours in seconds
   let cdTick = null;
@@ -564,7 +564,7 @@
       document.getElementById('hud-cd').classList.add('on');
     }
 
-    if (idx === 16 || idx === 18 || idx === 20) {
+    if (idx === 16 || idx === 18 || idx === 20 || idx === 21) {
       document.getElementById('hud-cd').classList.remove('on');
     }
   }
@@ -574,9 +574,186 @@
      PUBLIC NAVIGATION — called by HTML onclick
   ───────────────────────────────────────── */
   window.go = function (i) {
-    const isDeath = (i === 16 || i === 14);
+    if (i === 14) {
+      launchMiniGame();
+      return;
+    }
+    const isDeath = (i === 16 || i === 21);
     glitchFlash(function () { showScene(i); }, isDeath);
   };
+
+
+  /* ─────────────────────────────────────────
+     MINI-GAME — SHOOT KAASHVI
+     Flow: instruction (2s) → countdown 3→2→1 → 3s challenge → result
+  ───────────────────────────────────────── */
+  function launchMiniGame() {
+    const overlay   = document.getElementById('mg-overlay');
+    const phaseInst = document.getElementById('mg-instruction');
+    const phaseCd   = document.getElementById('mg-countdown');
+    const phaseShoot= document.getElementById('mg-shoot');
+    const phaseRes  = document.getElementById('mg-result');
+    const cdNum     = document.getElementById('mg-cdnum');
+    const ring      = document.getElementById('mg-ring');
+    const shotsEl   = document.getElementById('mg-shots');
+    const progBar   = document.getElementById('mg-progbar');
+    const timebar   = document.getElementById('mg-timebar');
+    const timeleft  = document.getElementById('mg-timeleft');
+    const hitflash  = document.getElementById('mg-hitflash');
+    const resIcon   = document.getElementById('mg-result-icon');
+    const resTxt    = document.getElementById('mg-result-text');
+
+    const GOAL      = 30;
+    const DURATION  = 3000; // ms
+    let shots       = 0;
+    let mgKeyListener = null;
+    let challengeTimer = null;
+    let timebarTimer   = null;
+
+    // Reset state
+    shots = 0;
+    shotsEl.textContent = '0';
+    progBar.style.width = '0%';
+    timebar.style.width = '100%';
+    timeleft.textContent = '3.0s';
+    [phaseInst, phaseCd, phaseShoot, phaseRes].forEach(function(p){ p.style.display = 'none'; });
+
+    // Show overlay
+    overlay.style.display = 'flex';
+
+    // ── PHASE 1: Instruction (2s) ──
+    phaseInst.style.display = 'block';
+    phaseInst.style.opacity = '0';
+    phaseInst.style.animation = 'fuv .5s ease forwards';
+
+    // Glitch/pulse animation on instruction text
+    const instText = document.getElementById('mg-insttext');
+    instText.style.animation = 'mgpulse 0.7s ease-in-out infinite alternate';
+
+    setTimeout(function() {
+      // ── PHASE 2: Countdown ──
+      phaseInst.style.display = 'none';
+      phaseCd.style.display   = 'block';
+
+      const circumference = 439.8;
+      let count = 3;
+
+      function showCount(n) {
+        cdNum.textContent = n;
+        cdNum.style.animation = 'none';
+        void cdNum.offsetWidth; // reflow
+        cdNum.style.animation = 'mgpop .25s ease forwards';
+        // Drain the ring over 1 second
+        ring.style.transition = 'stroke-dashoffset .95s linear';
+        ring.style.strokeDashoffset = String(circumference * (1 - (n - 1) / 3));
+      }
+
+      // Reset ring
+      ring.style.transition = 'none';
+      ring.style.strokeDashoffset = '0';
+      void ring.offsetWidth;
+
+      showCount(3);
+
+      const cdInterval = setInterval(function() {
+        count--;
+        if (count > 0) {
+          showCount(count);
+        } else {
+          clearInterval(cdInterval);
+          // ── PHASE 3: Shooting challenge ──
+          phaseCd.style.display    = 'none';
+          phaseShoot.style.display = 'block';
+
+          const startTime = Date.now();
+
+          // Key listener
+          mgKeyListener = function(e) {
+            if (e.key !== 's' && e.key !== 'S') return;
+            e.preventDefault();
+            shots++;
+            shots = Math.min(shots, GOAL);
+            shotsEl.textContent = shots;
+            progBar.style.width = (shots / GOAL * 100) + '%';
+
+            // Hit flash
+            hitflash.style.opacity = '1';
+            setTimeout(function(){ hitflash.style.opacity = '0'; }, 60);
+
+            // Gun click sound
+            playGunClick();
+          };
+          document.addEventListener('keydown', mgKeyListener);
+
+          // Time bar drain
+          const tbInterval = setInterval(function() {
+            const elapsed = Date.now() - startTime;
+            const remaining = Math.max(0, DURATION - elapsed);
+            timebar.style.width = (remaining / DURATION * 100) + '%';
+            timeleft.textContent = (remaining / 1000).toFixed(1) + 's';
+            if (remaining <= 0) clearInterval(tbInterval);
+          }, 50);
+          timebarTimer = tbInterval;
+
+          // End after 3s
+          challengeTimer = setTimeout(function() {
+            document.removeEventListener('keydown', mgKeyListener);
+            clearInterval(tbInterval);
+            phaseShoot.style.display = 'none';
+            phaseRes.style.display   = 'block';
+
+            const won = shots >= GOAL;
+
+            if (won) {
+              resIcon.textContent = '🔫';
+              resTxt.style.color = '#c050ff';
+              resTxt.style.textShadow = '0 0 40px rgba(180,80,255,.7)';
+              resTxt.textContent = 'SHOT FIRED';
+            } else {
+              resIcon.textContent = '💀';
+              resTxt.style.color  = 'var(--red)';
+              resTxt.style.textShadow = '0 0 40px rgba(255,34,68,.7)';
+              resTxt.textContent = 'TOO SLOW';
+            }
+
+            // Fade out overlay then go to scene
+            setTimeout(function() {
+              overlay.style.transition = 'opacity .6s ease';
+              overlay.style.opacity = '0';
+              setTimeout(function() {
+                overlay.style.display   = 'none';
+                overlay.style.opacity   = '1';
+                overlay.style.transition = '';
+                const dest = won ? 21 : 16;
+                glitchFlash(function(){ showScene(dest); }, true);
+              }, 650);
+            }, 1000);
+
+          }, DURATION);
+        }
+      }, 1000);
+
+    }, 2000);
+  }
+
+  /* Quick gun-click sound */
+  function playGunClick() {
+    try {
+      const ctx = getAudioCtx();
+      const buf = ctx.createBuffer(1, ctx.sampleRate * 0.08, ctx.sampleRate);
+      const d   = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) {
+        d[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.012));
+      }
+      const src = ctx.createBufferSource();
+      src.buffer = buf;
+      const gain = ctx.createGain();
+      gain.gain.value = 0.35;
+      src.connect(gain);
+      gain.connect(ctx.destination);
+      src.start();
+    } catch(e) {}
+  }
 
 
   /* ─────────────────────────────────────────
