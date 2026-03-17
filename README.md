@@ -1,109 +1,116 @@
-# CyberDeath2.0
-🧠 CyberDeath 2.0
+CyberDeath 2.0
 
-CyberDeath 2.0 is the second installment in the CyberDeath interactive storytelling series.
-It expands the dark cyberpunk narrative introduced in CyberDeath 1, while also working as a standalone playable story.
+CyberDeath 2.0 is a web-based interactive cyberpunk storytelling game and the second installment in the CyberDeath series. It builds upon the original narrative while also functioning as a fully standalone experience.
 
-Built as a web-based interactive game, CyberDeath 2.0 combines storytelling, player decision-making, visual animations, and interactive mechanics to create an immersive browser experience.
+The project combines branching storytelling, real-time interaction mechanics, and immersive UI design to deliver an engaging browser-based game.
 
-🎮 About the Game
+🎮 Overview
 
-CyberDeath 2.0 takes players into a futuristic cyber-thriller world filled with mysterious signals, rogue AI systems, and abandoned research facilities.
+Set in a dystopian cyber-future, CyberDeath 2.0 places players in a world of:
 
-Players progress through the story by making critical choices that influence the storyline. Some moments require fast interaction from the player, adding tension and making the experience more engaging.
+Rogue AI systems
 
-Even though it continues the CyberDeath universe, the game can also be played independently without CyberDeath 1.
+Encrypted signals
 
-✨ Features
-🎭 Choice-Based Story
+Abandoned research facilities
 
-Players make decisions that affect the direction and outcome of the narrative.
+Ethical conflicts between humans and machines
 
-🎨 Advanced Visual Interface
+Players shape the story through decisions, with certain moments requiring fast-paced interaction, making gameplay dynamic and intense.
 
-Includes animated UI elements, transitions, and immersive scene design.
+✨ Key Features
+🎭 Choice-Based Narrative
+
+Multiple decision paths
+
+Story outcomes vary based on player choices
+
+🎨 Interactive UI & Animations
+
+Smooth transitions and visual storytelling
+
+Styled cyberpunk-themed interface
 
 🎵 Background Music
 
-Atmospheric music enhances immersion during gameplay.
+Looping atmospheric audio to enhance immersion
 
-🔊 Interactive Sound Effects
+🔊 Sound Effects
 
-Audio feedback for player actions and story events.
+Feedback-driven audio interactions for actions and events
 
-🎯 Interactive Shooting Mechanic
+🎯 Shooting Interaction Mechanic
 
-Includes an algorithmic interaction system where the player must perform rapid actions within a limited time to complete the shooting sequence.
+Time-based rapid input system
 
-🌌 Standalone Experience
+Adds tension and real-time engagement
 
-CyberDeath 2.0 can be played independently while still expanding the larger CyberDeath universe.
+🌌 Standalone + Connected Universe
 
-🧪 Technologies Used
+Can be played independently
 
-HTML5 – Game structure
+Expands the CyberDeath storyline
 
-CSS3 – Animations, visual design, UI styling
 
-JavaScript – Game logic, branching story paths, interaction mechanics
+🧪 Tech Stack
+Technology	Purpose
+HTML5	Structure and layout
+CSS3	Styling, animations, UI
+JavaScript	Game logic and interaction system
+
 
 📁 Project Structure
-CyberDeath2.0
+CyberDeath2.0/
 │
-├── index.html        # Main game interface
-├── style.css         # Styling and animations
-├── script.js         # Game logic and interaction algorithms
-├── assets/           # Images, audio, and visual assets
+├── index.html      # Main game interface
+├── style.css       # UI styling and animations
+├── script.js       # Game logic and interactions
+├── assets/         # Images, audio, and media files
 └── README.md
-🚀 How to Run the Game
-1️⃣ Clone the repository
-git clone https://github.com/your-username/Cyberdeath2.0.git
-2️⃣ Open the project folder
-3️⃣ Run the game
 
-Open:
 
-index.html
+🚀 Getting Started
+1. Clone the Repository
+git clone https://github.com/Prakhar3518/Cyberdeath2.0.git
+2. Open Project Folder
+cd Cyberdeath2.0
+3. Run the Game
 
-in any modern browser.
+Open index.html in your browser
 
-Recommended browsers:
+✅ Recommended Browsers
 
-Chrome
+Google Chrome
 
-Edge
+Microsoft Edge
 
-Firefox
+Mozilla Firefox
 
 🧠 Gameplay Mechanics
 
-CyberDeath 2.0 combines narrative branching with interactive mechanics.
+The game is built on a combination of narrative and logic systems:
 
-Key systems include:
+Decision Nodes → Player choices control progression
 
-Decision Nodes → Player choices determine story progression
+Branching Paths → Multiple possible storylines
 
-Branching Paths → Multiple narrative directions
+Interactive Events → Requires user input in key scenes
 
-Interactive Event System → Certain scenes require active player participation
-
-Shooting Interaction Algorithm → Player must react quickly within a timed sequence
+Timed Action System → Fast responses affect outcomes
 
 🌐 CyberDeath Universe
 
-CyberDeath is an ongoing interactive storytelling project exploring themes such as:
+The CyberDeath series explores:
 
-Artificial Intelligence
+Artificial Intelligence & control systems
 
 Cybersecurity and hacking
 
-AI control systems
-
 Human vs machine conflict
 
-Cyberpunk dystopian worlds
+Cyberpunk dystopian environments
 
-CyberDeath 2.0 expands this universe with more interaction, improved visuals, and deeper gameplay mechanics.
+CyberDeath 2.0 expands the universe with deeper interactivity and improved immersion.
 
 👨‍💻 Author
 
@@ -111,28 +118,29 @@ Prakhar Chaudhary
 
 📧 Email: prakharchaudhary0302@gmail.com
 
-💼 LinkedIn:
-https://www.linkedin.com/in/prakhar-chaudhary-94a84a2b7/
+💼 LinkedIn: https://www.linkedin.com/in/prakhar-chaudhary-94a84a2b7/
 
-💻 GitHub:
-https://github.com/Prakhar3518
+💻 GitHub: https://github.com/Prakhar3518
 
-⭐ Future Improvements
+⭐ Future Enhancements
 
-Save progress system
+Save & resume progress system
 
 Additional story branches
 
-Expanded AI storyline
+Expanded AI narrative arcs
 
-More cinematic interactions
+More cinematic gameplay sequences
 
-⭐ If you enjoyed the project, consider starring the repository.
+Enhanced sound design
 
+📜 License
 Copyright (c) 2026 Prakhar Chaudhary
 
 All rights reserved.
 
-This project and its source code may not be copied, modified, distributed,
-or used for commercial or non-commercial purposes without explicit
-permission from the author.
+This project and its source code may not be copied, modified, distributed, or used
+for commercial or non-commercial purposes without explicit permission from the author.
+⭐ Support
+
+If you enjoyed this project, consider giving it a ⭐ on GitHub!
